@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .form-section {
+        width: 1200px;
+        margin: 24px auto 0;
+        gap: 0px;
+        opacity: 0px;
+      }
+
+      .img-span {
+        position: absolute !important;
+        left: 76px;
+        top: 3px !important;
+      }
+
+      .completed-img1,
+      .completed-img2,
+      .completed-img3,
+      .completed-img4 {
+        display: none;
+      }
+
+      .arrow-steps .step.completed {
+        background-color: #3f6a72;
+      }
+
+      .arrow-steps .step.step.completed {
+        color: #fff;
+      }
+
+      .arrow-steps .step.completed:before,
+      .arrow-steps .step.completed:after {
+        border-left-color: #3f6a72;
+      }
+
+      /* new */
+      .arrow-steps {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden; /* Hide overflow */
+        margin-bottom: 20px; /* Add some space at the bottom */
+      }
+
+      .arrow-steps .step {
+        font-size: 14px;
+        text-align: center;
+        color: #666;
+        cursor: default;
+        margin: 0 7px;
+        min-width: 240px;
+        /* float: left; */
+        display: flex;
+        position: relative;
+        background-color: #e8edee;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: background-color 0.2s ease;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 1.11px 2.22px 0px #37415114;
+      }
+
+      .arrow-steps .step:after,
+      .arrow-steps .step:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: -27px;
+        width: 0;
+        height: 0;
+        border-top: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+        border-left: 40px solid #e8edee;
+        z-index: 2;
+        transition: border-color 0.2s ease;
+      }
+
+      .arrow-steps > .step:not(:first-child):before {
+        right: auto;
+        left: -2px;
+        border-left: 29px solid #fff;
+        z-index: 0;
+      }
+
+      .arrow-steps > .step:first-child:before {
+        right: auto;
+        left: -42px;
+        border-left: 40px solid #fff;
+        z-index: 0;
+      }
+
+      .arrow-steps .step:first-child:before {
+        border: none;
+      }
+
+      .arrow-steps .step:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      .arrow-steps .step span {
+        position: relative;
+        width: 100%;
+      }
+
+      .arrow-steps .step span:before {
+        opacity: 0;
+        content: "✔";
+        position: absolute;
+        top: -2px;
+        left: -20px;
+      }
+
+      .arrow-steps .step.done span:before {
+        opacity: 1;
+        -webkit-transition: opacity 0.3s ease 0.5s;
+        -moz-transition: opacity 0.3s ease 0.5s;
+        -ms-transition: opacity 0.3s ease 0.5s;
+        transition: opacity 0.3s ease 0.5s;
+      }
+
+      .arrow-steps .step.current {
+        color: #fff;
+        background-color: #0f454f;
+      }
+
+      .arrow-steps .step.current:after {
+        border-left: 28px solid #0f454f;
+      }
+      .arrow-steps .step:after {
+        border-left: 28px solid #e8edee;
+      }
+      /* label */
+
+      .step span {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+
+      .lable-title {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        /* text-align: center; */
+      }
+
+      /* input design */
+    </style>
+  </head>
+  <body>
+    <div class="form-section">
+      <!-- divder start -->
+      <div class="logo-form">
+        <img src="./EEC Logo for NOC 1.png" alt="" />
+      </div>
+
+      <div class="company-contact">
+        <h3 class="section-title">PROJECT INFORMATION REQUEST</h3>
+        <div class="dots">
+          <span class="dot-1"></span>
+          <span class="dot-2"></span>
+        </div>
+      </div>
+
+      <div class="arrow-steps">
+        <a href="#" class="step current">
+          <span>
+            <span class="img-span">
+              <img class="completed-img1" src="./Group 1000009538.png" alt="" />
+            </span>
+            Step 1
+            <br />
+            <lable class="lable-title">Company & Contact</lable></span
+          >
+        </a>
+        <a href="#" class="step"
+          ><span>
+            <span class="img-span">
+              <img class="completed-img2" src="./Group 1000009538.png" alt="" />
+            </span>
+            Step 2 <br />
+            <lable class="lable-title">Project Scope</lable></span
+          >
+        </a>
+        <a href="#" class="step">
+          <span>
+            <span class="img-span">
+              <img class="completed-img3" src="./Group 1000009538.png" alt="" />
+            </span>
+            Step 3 <br />
+            <lable class="lable-title">Products & Business</lable></span
+          >
+        </a>
+        <a href="#" class="step">
+          <span>
+            <span class="img-span">
+              <img class="completed-img4" src="./Group 1000009538.png" alt="" />
+            </span>
+            Step 4 <br />
+            <lable class="lable-title">Company & Contact</lable></span
+          >
+        </a>
+      </div>
+
+      <div id="step1" class="step">
+        <!-- divder start -->
+        <div class="company-contact">
+          <h3 class="section-title">COMPANY INFORMATION</h3>
+          <div class="dots">
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+          </div>
+        </div>
+        <!-- devider end -->
+        <form action="#">
+          <div class="input-wrapper">
+            <div class="input-company">
+              <label for="">Company Name</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Contact Name & Title</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">COMPANY CONTACT</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+
+          <!-- COMPANY CONTACT -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Company Address</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">City</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Country</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Phone Number</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Email Address</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- <div class="input-company"> -->
+          <label class="lable-company-status" for="">Company Status</label>
+          <input type="radio" />
+          <label class="private-public" for="">Private</label>
+          <input type="radio" />
+          <!-- </div> -->
+          <label class="private-public" for="">Publicly Traded</label>
+          <br />
+          <button class="form-btn" type="button" onclick="nextStep(1)">
+            Next
+          </button>
+        </form>
+      </div>
+
+      <div id="step2" class="step" style="display: none">
+        <!-- divder start -->
+        <div class="company-contact">
+          <h3 class="section-title">PROJECT SCOPE</h3>
+          <div class="dots">
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+          </div>
+        </div>
+        <!-- devider end -->
+        <form action="#">
+          <div class="input-wrapper-checkbox">
+            <div class="checkbox-data">
+              <div class="input-company-checkbox">
+                <label for=""
+                  >Describe operation at the proposed facility in EEC</label
+                >
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Manufacturing</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Assembly</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Distribution</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Service/Sales</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Corporate HQ</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Research and Development</label>
+              </div>
+            </div>
+            <div class="checkbox-data">
+              <div class="input-company-checkbox">
+                <label for=""
+                  >Key factors the company will evaluate for a location
+                  decision</label
+                >
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Proximity to Market/Coustomers</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Cost and availability of labour</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Incentives</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Tax Climate</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Logistics</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Raw Materials</label>
+              </div>
+              <div class="input-company-checkbox">
+                <input type="checkbox" name="" id="" />
+                <label for="">Others</label>
+              </div>
+            </div>
+          </div>
+          <!-- chaeckbox end -->
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">CAPITAL INVESTMENT PLANS</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+          <!-- input -->
+          <div class="input-wrapper">
+            <div class="input-company">
+              <label for="">Estimate of Total New Investment</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <label class="lable-company-status" for=""
+            >Real Estate Preference</label
+          >
+          <input type="radio" />
+          <label class="private-public" for="">Existing Building</label>
+          <input type="radio" />
+          <label class="private-public" for="">New Construction</label>
+          <!-- 2 -->
+          <label class="lable-company-status" for=""
+            >Real Estate Preference</label
+          >
+          <input type="radio" />
+          <label class="private-public" for="">Purchase</label>
+          <input type="radio" />
+          <label class="private-public" for="">Lease</label>
+          <!--  -->
+          <div class="input-wrapper">
+            <div class="input-company">
+              <label for="">Lease Terms (No. of Years)</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- EMPLOYMENT PLANS -->
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">EMPLOYMENT PLANS</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Estimate of New Jobs - Year 1</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Estimate of New Jobs - Year 2</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Estimate of New Jobs - Year 3</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Estimate of New Jobs - Year 4</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Estimate of New Jobs - Year 5</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- PROJECTED TIME FRAME -->
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">EMPLOYMENT PLANS</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for=""
+                >Date to enter contract for lease/purchase of
+                building/land</label
+              >
+              <input type="date" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Date to start operation/construction </label>
+              <input type="date" name="" id="" />
+            </div>
+          </div>
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Date of first hire</label>
+              <input type="date" name="" id="" />
+            </div>
+          </div>
+          <!-- MARKETS OF INTEREST -->
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">MARKETS OF INTEREST</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+          <div class="checkbox-data">
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">South East/South-South Nigeria</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Nigeria Nation</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">West Africa (ECOWAS)</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Africa (AfCFTA)</label>
+            </div>
+          </div>
+
+          <!-- end -->
+          <div class="input-wrapper">
+            <button class="form-btn-empty" type="button" onclick="prevStep(2)">
+              Back
+            </button>
+            <button class="form-btn" type="button" onclick="nextStep(2)">
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="step3" class="step" style="display: none">
+        <!-- divder start -->
+        <div class="company-contact">
+          <h3 class="section-title">PRODUCTS/BUSINESS</h3>
+          <div class="dots">
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+          </div>
+        </div>
+        <!-- devider end -->
+        <form action="#">
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Type of Product</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Estimated Annual Production</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!--2 -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Estimated Annual Output Value</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Market Share: Local %</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!--3  -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Market Share: Export %</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">Percentage of raw material: Local Content %</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!--4  -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for=""
+                >Percentage of raw material: Foreign Content %</label
+              >
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">SPACE REQUIREMENT</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+          <div class="checkbox-data">
+            <div class="input-company-checkbox">
+              <label for="">Completed Building</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Industrial</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Office</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Incentives</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Lab</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Flex Space</label>
+            </div>
+            <div class="input-company-checkbox">
+              <input type="checkbox" name="" id="" />
+              <label for="">Other</label>
+            </div>
+          </div>
+
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Area (M2)</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+
+          <label class="lable-company-status" for="">Preference</label>
+          <input type="radio" />
+          <label class="private-public" for="">Stand-Alone Building</label>
+          <input type="radio" />
+          <!-- </div> -->
+          <label class="private-public" for="">Multi-Tenant</label>
+
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">LAND TO UNDERTAKE TO OWN BUILDING</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+          <!-- devider end -->
+
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Size of Land in Hectares </label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!--end  -->
+
+          <div class="input-wrapper">
+            <button class="form-btn-empty" type="button" onclick="prevStep(3)">
+              Back
+            </button>
+            <button class="form-btn" type="button" onclick="nextStep(3)">
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="step4" class="step" style="display: none">
+        <!-- divder start -->
+        <div class="company-contact">
+          <h3 class="section-title">PRODUCTS/BUSINESS</h3>
+          <div class="dots">
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+          </div>
+        </div>
+        <!-- devider end -->
+        <form action="#">
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Company Address</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">City</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Company Address</label>
+              <input type="text" name="" id="" />
+            </div>
+            <div class="input-company">
+              <label for="">City</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Company Address</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <!-- divder start -->
+          <div class="company-contact">
+            <h3 class="section-title">PRODUCTS/BUSINESS</h3>
+            <div class="dots">
+              <span class="dot-1"></span>
+              <span class="dot-2"></span>
+            </div>
+          </div>
+
+          <!-- devider end -->
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Distance to Airport</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <label class="lable-company-status" for=""
+            >Rail Access Required</label
+          >
+          <input type="radio" />
+          <label class="private-public" for="">Yes</label>
+          <input type="radio" />
+          <!-- </div> -->
+          <label class="private-public" for="">No</label>
+
+          <!--  -->
+
+          <div class="input-wrapper new-margin">
+            <div class="input-company">
+              <label for="">Distance to Insterstate or Highway</label>
+              <input type="text" name="" id="" />
+            </div>
+          </div>
+          <label class="lable-company-status" for="">Port Access Needed</label>
+          <input type="radio" />
+          <label class="private-public" for="">Inbound</label>
+          <input type="radio" />
+          <!-- </div> -->
+          <label class="private-public" for="">Outbound</label>
+          <input type="radio" />
+          <!-- </div> -->
+          <label class="private-public" for="">Both</label>
+          <br />
+
+          <div class="input-wrapper">
+            <button class="form-btn-empty" type="button" onclick="prevStep(4)">
+              Back
+            </button>
+            <button class="form-btn" type="submit" onclick="showPopup()">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="popup-container" id="popupContainer">
+        <div class="popup-content">
+          <div class="page-wrapper">
+            <img src="./Done-rafiki 1.png" alt="" />
+            <div class="submitted">
+              <span>Congratulations!</span>
+            </div>
+
+            <p>
+              You have successfully submitted your PIR Form. Our Marketing Team
+              will contact us soon. Thank you!
+            </p>
+            <button class="forn" onclick="closePopup()">Done</button>
+          </div>
+          <span class="close-button" onclick="closePopup()">&times;</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function nextStep(step) {
+        console.log("completed-img" + step);
+        var currentStep = document.querySelector(".arrow-steps .current");
+        currentStep.classList.remove("current");
+
+        if (step === 1 || step === 2 || step === 3) {
+          currentStep.classList.add("completed");
+        }
+
+        var nextStepElement = document.querySelectorAll(".arrow-steps a")[step];
+        nextStepElement.classList.add("current");
+
+        var container = document.querySelector(".arrow-steps");
+        var scrollTo = nextStepElement.offsetLeft - container.offsetLeft;
+        container.scrollTo({
+          left: scrollTo,
+          behavior: "smooth",
+        });
+
+      
+
+        document.getElementById("step" + step).style.display = "none";
+        document.getElementById("step" + (step + 1)).style.display = "block";
+
+        document.getElementsByClassName(
+          "completed-img" + step
+        )[0].style.display = "block";
+
+        // Update step indicator
+        updateStepIndicator(step + 1);
+
+        // Scroll to top of the page
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function prevStep(step) {
+        var currentStep = document.querySelector(".arrow-steps .current");
+        currentStep.classList.remove("current");
+
+        var prevStepElement =
+          document.querySelectorAll(".arrow-steps a")[step - 2];
+        prevStepElement.classList.add("current");
+
+        var container = document.querySelector(".arrow-steps");
+        var scrollTo = prevStepElement.offsetLeft - container.offsetLeft;
+        container.scrollTo({
+          left: scrollTo,
+          behavior: "smooth",
+        });
+
+        document.getElementById("step" + step).style.display = "none";
+        document.getElementById("step" + (step - 1)).style.display = "block";
+
+        // Update step indicator
+        updateStepIndicator(step - 1);
+
+        // Scroll to top of the page
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function updateStepIndicator(step) {
+        // Remove 'current' class from all steps
+        var steps = document.querySelectorAll(".arrow-steps a");
+        steps.forEach(function (stepElement) {
+          stepElement.classList.remove("current");
+        });
+
+        // Add 'current' class to the current step
+        var currentStepElement =
+          document.querySelectorAll(".arrow-steps a")[step - 1];
+        currentStepElement.classList.add("current");
+      }
+
+      function showPopup() {
+        var popupContainer = document.getElementById("popupContainer");
+        popupContainer.style.display = "block";
+      }
+
+      function closePopup() {
+        var popupContainer = document.getElementById("popupContainer");
+        popupContainer.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
