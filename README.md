@@ -14,3 +14,8 @@ Regarding my projects, I have worked on many projects using React.js,
  I enjoy front-end development and always work to improve my skills.
   I believe my experience and dedication would be valuable to your team.
    Thank you.
+
+Scope: var is function-scoped, while let and const are block-scoped.
+Hoisting: All three are hoisted, but let and const are not initialized 
+Reassignment: var and let can be reassigned. const cannot be reassigned 
+Redeclaration: var allows redeclaration within the same scope, whereas let and const do not allows redeclaration.
