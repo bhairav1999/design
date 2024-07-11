@@ -19,3 +19,25 @@ Scope: var is function-scoped, while let and const are block-scoped.
 Hoisting: All three are hoisted, but let and const are not initialized 
 Reassignment: var and let can be reassigned. const cannot be reassigned 
 Redeclaration: var allows redeclaration within the same scope, whereas let and const do not allows redeclaration.
+
+find second largest number
+const secondLargest = (arr) => {
+    if (arr.length < 2) {
+        throw new Error("Array must contain at least two elements");
+    }
+
+    let largest = arr[0];
+    let secondLargest = -Infinity;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] !== largest) {
+            secondLargest = arr[i];
+        }
+    }
+    return secondLargest;
+}
+console.log(secondLargest([1, 5, 8, 9, 2, 6])); // Output: 8
+
