@@ -21,6 +21,7 @@ Reassignment: var and let can be reassigned. const cannot be reassigned
 Redeclaration: var allows redeclaration within the same scope, whereas let and const do not allows redeclaration.
 
 find second largest number
+
 const secondLargest = (arr) => {
     if (arr.length < 2) {
         throw new Error("Array must contain at least two elements");
